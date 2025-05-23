@@ -1,5 +1,8 @@
 * {
     box-sizing: border-box;
+    font-family: Ubuntu, monospace;
+    font-size: 20px;
+    font-weight: 800;
 }
 
 body {
@@ -7,9 +10,6 @@ body {
 }
 
 .page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100vw;
     height: 100vh;
     background-color: midnightblue;
@@ -22,17 +22,20 @@ body {
     justify-content: center;
     align-items: center;
     min-width: 300px;
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 100%;
     gap: 30px;
     padding: 30px;
     background-color: skyblue;
+    color: blue;
 }
 
 .sketchpad-container {
-    width: 100%;
-    aspect-ratio: 1;
     display: flex;
     flex-direction: column;
     gap: 1px;
+    aspect-ratio: 1;
 }
 
 .grid-row {
@@ -48,4 +51,27 @@ body {
 
 .blue {
     background-color: blue;
+}
+
+@media only screen and (orientation: landscape) {
+    .sketchpad-container {
+        height: 100%;
+        max-width: 100%;
+
+    }
+}
+
+@media only screen and (orientation: portrait) {
+    .sketchpad-container {
+        width: 100%;
+        max-height: 100%;
+    }
+}
+
+button {
+    border: none;
+    padding: 0.5em 1em;
+    background-color: blue;
+    color: azure;
+    cursor: pointer;
 }

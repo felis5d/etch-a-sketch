@@ -47,9 +47,10 @@ function draw() {
     }
     
     squaresArray = getSquares();
-    squaresArray.forEach((square) =>
-        square.addEventListener('pointerover', color)
-    )
+    squaresArray.forEach((square) => {
+        square.addEventListener('pointermove', color);
+        square.addEventListener('touchmove', color);
+    })
 }
 
 draw();
