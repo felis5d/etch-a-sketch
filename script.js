@@ -2,7 +2,7 @@ const sketchpadContainer = document.querySelector('.sketchpad-container');
 const gridValue = document.getElementById('grid-value');
 const slider = document.getElementById('grid-dimension');
 let gridDimension = slider.value;  
-gridValue.innerHTML = '25 x 25';
+gridValue.innerHTML = '50 x 50';
 
 function createGrid() {
     for (let i=0; i<gridDimension; i++) {
@@ -35,17 +35,28 @@ function changeGrid() {
 
 createGrid();
 
-function draw() {
+function getSquares() {
     let squares = document.getElementsByClassName('grid-column');
     let squaresArray = Array.from(squares);
-    
+    return squaresArray;
+}
+
+function draw() {
     function color() {
         this.classList.add('blue');
     }
     
+    squaresArray = getSquares();
     squaresArray.forEach((square) =>
-        square.addEventListener('mouseover', color)
+        square.addEventListener('pointerover', color)
     )
 }
 
 draw();
+
+function eraseEverything() {
+    squaresArray = getSquares();
+    squaresArray.forEach((square) =>
+        square.classList.remove('blue')
+    )
+}

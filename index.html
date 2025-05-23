@@ -10,11 +10,11 @@
     <body>
         <div class="page">
             <div class="game-container">
-                <input type="range" id="grid-dimension" min="1" max="50" oninput="changeGrid()">
+                <input type="range" id="grid-dimension" min="1" max="100" oninput="changeGrid()">
                 <div id="grid-value"></div>
                 <div class="sketchpad-container">
                 </div>
-                <button class="erase">Erase everything</button>
+                <button class="erase-everything" onclick="eraseEverything()">Erase everything</button>
             </div>
         </div>
     </body>
